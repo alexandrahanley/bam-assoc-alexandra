@@ -6,13 +6,13 @@
   <%= f.collection_select :id, Doctor.all, :id,
       :name, {include_blank: true}, {class: "form-control"} %>
 
-  <%= f.label :user_name %>
-  <%= f.collection_select :id, User.all, :id,
-      :username, {include_blank: true}, {class: "form-control"} %>
-
   <%= f.label :date %>
   <%= f.date_select :date %>
 
 <%= f.submit %>
 
+<% end %>
+
+<% @appointments.each do |appointment| %>
+  <li><%= appointment.date %></li>
 <% end %>
