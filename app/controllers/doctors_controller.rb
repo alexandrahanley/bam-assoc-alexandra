@@ -2,6 +2,7 @@ class DoctorsController < ApplicationController
 
   def index
     @doctors = Doctor.all
+    @doctor = Doctor.new
   end
 
   def new
@@ -12,6 +13,7 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
       redirect_to doctors_path
+    end
   end
 
   private
